@@ -11,13 +11,7 @@ import orderRouter from "./routes/orderRoutes.js";
 const app = express()
 const port = 4000
 
-app.use(cors(
-  {
-    origin:["https://food-del-frontend-pi.vercel.app"],
-    methods:["POST","GET"],
-    credentials:true
-  }
-));
+
 
 // middleware
 app.use(express.json())

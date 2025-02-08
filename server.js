@@ -9,14 +9,17 @@ import orderRouter from "./routes/orderRoutes.js";
 
 // app config
 const app = express()
-const port = 4000
+// const port = 4000
 
 
 
 // middleware
 app.use(express.json())
-app.use(cors())
-
+app.use(cors({
+  origin: ["https://food-del-frontend.vercel.app"], // Add frontend URL here
+  methods: ["POST", "GET"],
+  credentials: true
+}));
 // connection 
 connectDb();
 
@@ -32,8 +35,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })
 
 // mongodb+srv://<username>:<password>@cluster0.9fsr0cr.mongodb.net/?

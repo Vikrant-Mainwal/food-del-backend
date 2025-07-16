@@ -16,7 +16,6 @@ const PORT =  5000;
 app.use(express.json());
 app.use(cors({
   origin: ["https://food-del-frontend-ecru.vercel.app/"], // allow your frontend origin
-  origin: ["http://localhost:5174"], // allow your frontend origin
   methods: ["GET", "POST", "PUT", "DELETE"], // include methods you're using
   credentials: true
 }));

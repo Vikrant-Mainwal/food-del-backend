@@ -10,13 +10,17 @@ import orderRouter from "./routes/orderRoutes.js";
 // App config
 const app = express();
 
+const PORT =  5000;
+
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ["https://food-del-frontend-ecru.vercel.app"], 
-  methods: ["POST", "GET"],
+  origin: ["http://localhost:5173"], // allow your frontend origin
+  origin: ["http://localhost:5174"], // allow your frontend origin
+  methods: ["GET", "POST", "PUT", "DELETE"], // include methods you're using
   credentials: true
 }));
+
 
 // Database connection
 connectDb();
@@ -27,6 +31,10 @@ app.use("/api/food", foodRoutes);
 app.use("/images", express.static("uploads"));
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
 
 // Root route
 app.get("/", (req, res) => {

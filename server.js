@@ -1,9 +1,9 @@
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { connectDb } from "./config/db.js";
 import foodRoutes from "./routes/foodRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-import "dotenv/config";
 import cartRouter from "./routes/cartRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 

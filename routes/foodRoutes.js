@@ -19,5 +19,4 @@ foodRoutes.post('/add',upload.single("image"),addFood)
 foodRoutes.get("/list",getFood)
 foodRoutes.post("/remove",removeFood)
 
-
 export default foodRoutes

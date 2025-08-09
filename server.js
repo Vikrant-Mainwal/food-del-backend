@@ -14,6 +14,7 @@ const PORT =  5000;
 
 // Middleware
 app.use(express.json());
+
 app.use(cors({
   origin: ["https://food-del-frontend-ecru.vercel.app","https://food-del-admin-chi.vercel.app"], // allow your frontend origin
   methods: ["GET", "POST", "PUT", "DELETE"], // include methods you're using

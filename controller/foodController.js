@@ -67,7 +67,7 @@ const removeFood = async (req, res) => {
       return res.json({ success: false, message: "Food not found" });
     }
 
-    if (food.image?.public_id) {
+    if (food.image && food.image?.public_id) {
       await cloudinary.uploader.destroy(food.image.public_id);
     }
 
